@@ -1,6 +1,5 @@
 #include "string.h"
 #include <stddef.h>
-
 void itoa(char *buf, int num) {
     int index = 0;
 
@@ -50,6 +49,26 @@ char *strrev(char *str, unsigned int length) {
         *right = tmp;
         left++;
         right--;
+    }
+    return str;
+}
+void *memcpy(void *dest, const void * src, size_t n)
+{
+    unsigned char *d, *s;
+    d = (unsigned char*)dest;
+    s = (unsigned char*)src;
+    for (size_t i = 0; i < n; i++)
+    {
+        *d++ = *s++;
+    }
+    return dest;
+}
+void *memset(void *str, int c, size_t n) 
+{
+    unsigned char *s =str;
+    for (size_t i = 0; i < n; i++)
+    {
+        *s++ =(unsigned char)c;
     }
     return str;
 }
